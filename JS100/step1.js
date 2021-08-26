@@ -1,4 +1,16 @@
+// 문제10
+
 // 문제9
+// let year = "2019";
+// let month = "04";
+// let day = "26";
+// let hour = "11";
+// let minute = "34";
+// let second = "27";
+
+// let result = `${year}/${month}/${day} ${hour}:${minute}:${second}`;
+
+// console.log(result);
 
 // 문제8
 // let d = {

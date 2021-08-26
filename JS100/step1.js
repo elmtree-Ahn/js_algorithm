@@ -1,3 +1,29 @@
+// 문제9
+
+// 문제8
+// let d = {
+//   height: 180,
+//   weight: 78,
+//   weight: 84,
+//   temperature: 36,
+//   eyesight: 1
+// };
+// console.log(d["weight"]);
+
+// 문제7
+// 3,5번
+
+// 문제6
+// 2번
+
+// 문제5
+// var a = 10;
+// var b = 2;
+// for (var i = 1; i < 5; i += 2) {
+//   a += i;
+// }
+// console.log(a + b);
+
 // 문제4
 // 2번
 

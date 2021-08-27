@@ -1,11 +1,19 @@
 // 문제10
-const input = 5;
+const n = prompt("숫자를 입력하세요.");
+let tree = "";
 
-for (let i = 1; i <= input; i++) {
-  let space = " " * (5 - i);
-  let star = "*" * i + (i - 1);
-  console.log(`${space}${star}${space}`);
+for (let i = 1; i <= n; i++) {
+  let star = "";
+  for (let j = 1; j <= n - i; j++) {
+    star += " ";
+  }
+  for (let k = 1; k <= 2 * i - 1; k++) {
+    star += "*";
+  }
+  tree += star + "\n";
 }
+
+console.log(tree);
 
 // 문제9
 // let year = "2019";

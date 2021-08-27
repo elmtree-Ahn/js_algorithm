@@ -1,8 +1,10 @@
 // 문제10
 const input = 5;
 
-for (let i = 1; i <= 5; i++) {
-  result = ``;
+for (let i = 1; i <= input; i++) {
+  let space = " " * (5 - i);
+  let star = "*" * i + (i - 1);
+  console.log(`${space}${star}${space}`);
 }
 
 // 문제9

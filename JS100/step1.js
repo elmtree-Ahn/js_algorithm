@@ -1,4 +1,9 @@
 // 문제10
+const input = 5;
+
+for (let i = 1; i <= 5; i++) {
+  result = ``;
+}
 
 // 문제9
 // let year = "2019";

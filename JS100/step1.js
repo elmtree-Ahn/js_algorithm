@@ -1,3 +1,8 @@
+// 문제 17
+// const height = prompt();
+// let result = height >= 150 ? "YES" : "NO";
+// console.log(result);
+
 // 문제 16
 // const name = prompt();
 // const nameReverse = name.split("").reverse().join("");

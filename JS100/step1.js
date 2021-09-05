@@ -1,3 +1,9 @@
+// 문제 18
+const data = prompt();
+let arr = data.split(" ").map(Number);
+let result = arr.reduce((sum, el) => sum + el, 0) / arr.length;
+console.log(result);
+
 // 문제 17
 // const height = prompt();
 // let result = height >= 150 ? "YES" : "NO";

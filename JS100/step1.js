@@ -1,8 +1,21 @@
+// Q.20
+// const data = prompt().split(" ").map(Number);
+// let [a, b] = data;
+// const result1 = parseInt(a / b);
+// const result2 = a % b;
+// console.log(result1, result2);
+
+// Q. 19
+// const data = prompt();
+// let arr = data.split(" ").map(Number);
+
+// console.log(arr[0] ** arr[1]);
+
 // 문제 18
-const data = prompt();
-let arr = data.split(" ").map(Number);
-let result = arr.reduce((sum, el) => sum + el, 0) / arr.length;
-console.log(result);
+// const data = prompt();
+// let arr = data.split(" ").map(Number);
+// let result = arr.reduce((sum, el) => sum + el, 0) / arr.length;
+// console.log(result);
 
 // 문제 17
 // const height = prompt();

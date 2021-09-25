@@ -1,3 +1,46 @@
+// Q.27 아따 안풀린다.
+// const name = "사과 딸기".split(" ");
+// const point = "60 80".split(" ");
+// let result = {};
+
+// for (let i = 0; i < name.length; i++) {
+//   result.name[i] = point[i];
+// }
+// console.log(result);
+
+// Q.26
+// const data = prompt();
+
+// switch (data) {
+//   case "수성":
+//     console.log("Mercury");
+//     break;
+//   case "금성":
+//     console.log("Venus");
+//     break;
+//   case "지구":
+//     console.log("Earth");
+//     break;
+//   case "화성":
+//     console.log("Mars");
+//     break;
+//   case "목성":
+//     console.log("Jupiter");
+//     break;
+// }
+
+// Q.25
+// const data = Number(prompt());
+// const result = (data) => {
+//   return data * data * 3.14;
+// };
+// console.log(result(data));
+
+// Q.24
+// const data = prompt();
+// const result = data.toUpperCase();
+// console.log(result);
+
 // Q.20
 // const data = prompt().split(" ").map(Number);
 // let [a, b] = data;

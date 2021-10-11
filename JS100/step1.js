@@ -2,6 +2,7 @@
 // const name = "사과 딸기".split(" ");
 // const point = "60 80".split(" ");
 // let result = {};
+// test
 
 // for (let i = 0; i < name.length; i++) {
 //   result.name[i] = point[i];

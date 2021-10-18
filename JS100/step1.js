@@ -1,3 +1,35 @@
+//test
+const data = [
+  {
+    id: 1,
+    abc: "고기"
+  },
+  {
+    id: 2,
+    abc: "고기"
+  },
+  {
+    id: 3,
+    abc: "밥"
+  },
+  {
+    id: 4,
+    abc: "밥"
+  }
+];
+
+console.log(data);
+
+const name = "고기";
+const findArr = [];
+for (let i = 0; i < data.length; i++) {
+  if (data[i].abc === name) {
+    findArr.push(data[i]);
+  }
+}
+
+console.log(findArr);
+
 // Q.27 아따 안풀린다.
 // const name = "사과 딸기".split(" ");
 // const point = "60 80".split(" ");

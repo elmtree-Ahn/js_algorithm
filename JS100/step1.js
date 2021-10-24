@@ -1,3 +1,5 @@
+//test
+
 // 27
 const name = "효은 유일".split(" ");
 const score = "70 100".split(" ");

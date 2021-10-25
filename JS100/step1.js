@@ -1,12 +1,7 @@
-//test
+// 28
 
-// 27
-const name = "효은 유일".split(" ");
-const score = "70 100".split(" ");
-const result = {};
+const data = "Javascript";
 
-for (let i = 0; i < name.length; i++) {
-  result[name[i]] = parseInt(score[i], 10);
+for (let i = 0; i < data.length - 1; i++) {
+  console.log(`${data[i]} ${data[i + 1]}`);
 }
-
-console.log(result);

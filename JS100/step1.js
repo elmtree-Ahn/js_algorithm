@@ -1,7 +1,8 @@
-// 28
+// 29
+const data = prompt("알파벳을 넣어봐라");
 
-const data = "Javascript";
-
-for (let i = 0; i < data.length - 1; i++) {
-  console.log(`${data[i]} ${data[i + 1]}`);
+if (data === data.toUpperCase()) {
+  console.log("YES");
+} else {
+  console.log("NO");
 }

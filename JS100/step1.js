@@ -1,8 +1,6 @@
-// 29
-const data = prompt("알파벳을 넣어봐라");
+// 30
+const sentence = "pineapple is yummy";
+const word = "apple";
 
-if (data === data.toUpperCase()) {
-  console.log("YES");
-} else {
-  console.log("NO");
-}
+console.log(`index = ${sentence.indexOf(word)}`);
+console.log(sentence.search(word));

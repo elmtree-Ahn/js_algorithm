@@ -1,19 +1,26 @@
-// 34
-// const a = prompt();
-// const result = a.split(" ").sort().join(" ");
+// 37
 
-// if (a === result) {
-//   console.log("YES");
-// } else {
-//   console.log("NO");
+// 36
+// const data = 2;
+// let result = "";
+// for (let i = 1; i < 10; i++) {
+//   result = result + `${data * i} `;
 // }
 
-// 33 거 꾸 로
-// const data = prompt();
-// console.log(data.split("").reverse().join(""));
-
-// 32
-// const sentence = "안녕하세요. 저는 제주대학교 컴퓨터공학전공 혜림입니다.";
-
-// const result = sentence.split(" ").length;
 // console.log(result);
+
+// 35
+// function one(n) {
+//   function two(x) {
+//     return Math.pow(x, n);
+//   }
+//   return two;
+// }
+
+// const a = one(2);
+// const b = one(3);
+// const c = one(4);
+
+// console.log(a(10));
+// console.log(b(10));
+// console.log(c(10));

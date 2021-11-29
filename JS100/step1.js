@@ -1,3 +1,29 @@
+// test
+const dummy = [
+  "빼빼로오리지널",
+  "빼빼로아몬드",
+  "빼빼로누드",
+  "빼빼로씬",
+  "빼빼로크런키",
+  "빼빼로오레오",
+  "아몬드봉봉",
+  "오레오오즈"
+];
+
+const data = "빼빼로";
+
+const result = [];
+for (let index in dummy) {
+  const item = dummy[index];
+  if (item.indexOf(data) !== -1) {
+    result.push(item);
+  }
+}
+
+console.log(result);
+
+// console.log(result);
+
 // 37
 // const data = "원범 원범 혜원 혜원 혜원 혜원 유진 유진".split(" ");
 // let result = {};

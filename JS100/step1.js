@@ -1,26 +1,42 @@
-// test
-const dummy = [
-  "빼빼로오리지널",
-  "빼빼로아몬드",
-  "빼빼로누드",
-  "빼빼로씬",
-  "빼빼로크런키",
-  "빼빼로오레오",
-  "아몬드봉봉",
-  "오레오오즈"
-];
+// 37
 
-const data = "빼빼로";
+const data = ["원범", "원범", "혜원", "혜원", "혜원", "유진"];
+let winner = "";
+let result = {};
 
-const result = [];
-for (let index in dummy) {
-  const item = dummy[index];
-  if (item.indexOf(data) !== -1) {
-    result.push(item);
-  }
+for (let i in data) {
+  let name = data[i];
+  result[name] = result[name] === undefined ? 1 : result[name] + 1;
 }
 
-console.log(result);
+winner = Object.keys(result).reduce((a, b) => {
+  return result[a] > result[b] ? a : b;
+});
+
+console.log(winner, result[winner]);
+
+// console.log(result);
+// 검색로직
+// const dummy = [
+//   "빼빼로오리지널",
+//   "빼빼로아몬드",
+//   "빼빼로누드",
+//   "빼빼로씬",
+//   "빼빼로크런키",
+//   "빼빼로오레오",
+//   "아몬드봉봉",
+//   "오레오오즈"
+// ];
+
+// const data = "빼빼로";
+
+// const result = [];
+// for (let index in dummy) {
+//   const item = dummy[index];
+//   if (item.indexOf(data) !== -1) {
+//     result.push(item);
+//   }
+// }
 
 // console.log(result);
 

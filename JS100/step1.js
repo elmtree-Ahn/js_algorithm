@@ -1,19 +1,22 @@
+// 39
+const data = "hqllo my namq is hyqwon";
+console.log(data.split("q").join("e"));
+
 // 38
-const scores = "97 86 75 66 55 97 85 97 97 95".split(" ").sort();
-const top3 = [];
-let count = 0;
+// const scores = "97 86 75 66 55 97 85 97 97 95".split(" ").sort();
+// let top3 = [];
+// let count = 0;
 
-while (top3.length < 4) {
-  let value = scores.pop();
-  if (!top3.includes(value)) {
-    top3.push(value);
-  }
-  count++;
-}
+// while (top3.length < 3) {
+//   let value = scores.pop();
+//   if (!top3.includes(value)) {
+//     top3.push(value);
+//   }
+//   count++;
+// }
 
-console.log(top3);
-console.log(count - 1);
-// console.log(scores);
+// console.log(top3);
+// console.log(count);
 
 // let data = 1;
 

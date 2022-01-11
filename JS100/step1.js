@@ -1,19 +1,43 @@
-// 37
+// 38
+const scores = "97 86 75 66 55 97 85 97 97 95".split(" ").sort();
+const top3 = [];
+let count = 0;
 
-const data = ["원범", "원범", "혜원", "혜원", "혜원", "유진"];
-let winner = "";
-let result = {};
-
-for (let i in data) {
-  let name = data[i];
-  result[name] = result[name] === undefined ? 1 : result[name] + 1;
+while (top3.length < 4) {
+  let value = scores.pop();
+  if (!top3.includes(value)) {
+    top3.push(value);
+  }
+  count++;
 }
 
-winner = Object.keys(result).reduce((a, b) => {
-  return result[a] > result[b] ? a : b;
-});
+console.log(top3);
+console.log(count - 1);
+// console.log(scores);
 
-console.log(winner, result[winner]);
+// let data = 1;
+
+// while (data <= 25) {
+//   data = data * 3;
+// }
+
+// console.log(data);
+// 37
+
+// const data = ["원범", "원범", "혜원", "혜원", "혜원", "유진"];
+// let winner = "";
+// let result = {};
+
+// for (let i in data) {
+//   let name = data[i];
+//   result[name] = result[name] === undefined ? 1 : result[name] + 1;
+// }
+
+// winner = Object.keys(result).reduce((a, b) => {
+//   return result[a] > result[b] ? a : b;
+// });
+
+// console.log(winner, result[winner]);
 
 // console.log(result);
 // 검색로직

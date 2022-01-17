@@ -1,19 +1,40 @@
-// 40
-const limit = Number(prompt("리미트를 입력하세요."));
-const person = Number(prompt("몇 명이 탑승하나요?"));
+// 41
+const data = Number(prompt("숫자를 입력하세요."));
 
-let total = 0;
-let count = 0;
+function result(number) {
+  let count = 0;
 
-for (let i = 1; i <= 5; i++) {
-  let weight = Number(prompt("무게를 입력하세요"));
-  total = total + weight;
-  if (total <= limit) {
-    count++;
+  for (let i = 1; i <= number; i++) {
+    if (number / i === parseInt(number / i)) {
+      count++;
+    }
+  }
+
+  if (count === 2) {
+    console.log("YES");
+  } else {
+    console.log("NO");
   }
 }
 
-console.log(count);
+result(data);
+
+// 40
+// const limit = Number(prompt("리미트를 입력하세요."));
+// const person = Number(prompt("몇 명이 탑승하나요?"));
+
+// let total = 0;
+// let count = 0;
+
+// for (let i = 1; i <= 5; i++) {
+//   let weight = Number(prompt("무게를 입력하세요"));
+//   total = total + weight;
+//   if (total <= limit) {
+//     count++;
+//   }
+// }
+
+// console.log(count);
 
 // 39
 // const data = "hqllo my namq is hyqwon";

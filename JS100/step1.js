@@ -1,23 +1,35 @@
-// 41
-const data = Number(prompt("숫자를 입력하세요."));
+// 42
+const a = Number(prompt("Month"));
+const b = Number(prompt("Day"));
 
-function result(number) {
-  let count = 0;
-
-  for (let i = 1; i <= number; i++) {
-    if (number / i === parseInt(number / i)) {
-      count++;
-    }
-  }
-
-  if (count === 2) {
-    console.log("YES");
-  } else {
-    console.log("NO");
-  }
+function getDate(month, day) {
+  let week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  let dayOfWeek = week[new Date(`2020-${month}-${day}`).getDay()];
+  console.log(dayOfWeek);
 }
 
-result(data);
+getDate(a, b);
+
+// 41
+// const data = Number(prompt("숫자를 입력하세요."));
+
+// function result(number) {
+//   let count = 0;
+
+//   for (let i = 1; i <= number; i++) {
+//     if (number / i === parseInt(number / i)) {
+//       count++;
+//     }
+//   }
+
+//   if (count === 2) {
+//     console.log("YES");
+//   } else {
+//     console.log("NO");
+//   }
+// }
+
+// result(data);
 
 // 40
 // const limit = Number(prompt("리미트를 입력하세요."));

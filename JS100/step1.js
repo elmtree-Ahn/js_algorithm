@@ -1,14 +1,20 @@
+// 43
+const data = Number(prompt("Give me number"));
+const result = data.toString(2);
+
+console.log(result);
+
 // 42
-const a = Number(prompt("Month"));
-const b = Number(prompt("Day"));
+// const a = Number(prompt("Month"));
+// const b = Number(prompt("Day"));
 
-function getDate(month, day) {
-  let week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
-  let dayOfWeek = week[new Date(`2020-${month}-${day}`).getDay()];
-  console.log(dayOfWeek);
-}
+// function getDate(month, day) {
+//   let week = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+//   let dayOfWeek = week[new Date(`2020-${month}-${day}`).getDay()];
+//   console.log(dayOfWeek);
+// }
 
-getDate(a, b);
+// getDate(a, b);
 
 // 41
 // const data = Number(prompt("숫자를 입력하세요."));

@@ -1,13 +1,17 @@
+//45
+const now = new Date();
+console.log(now.getFullYear());
+
 // 44
-const data = 3849;
-let makeList = String(data).split("");
-let result = 0;
+// const data = 3849;
+// let makeList = String(data).split("");
+// let result = 0;
 
-for (let i = 0; i < makeList.length; i++) {
-  result = result + Number(makeList[i]);
-}
+// for (let i = 0; i < makeList.length; i++) {
+//   result = result + Number(makeList[i]);
+// }
 
-console.log(result);
+// console.log(result);
 
 // 43
 // const data = Number(prompt("Give me number"));

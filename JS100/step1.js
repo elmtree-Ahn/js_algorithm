@@ -1,8 +1,19 @@
-// 43
-const data = Number(prompt("Give me number"));
-const result = data.toString(2);
+// 44
+const data = 3849;
+let makeList = String(data).split("");
+let result = 0;
+
+for (let i = 0; i < makeList.length; i++) {
+  result = result + Number(makeList[i]);
+}
 
 console.log(result);
+
+// 43
+// const data = Number(prompt("Give me number"));
+// const result = data.toString(2);
+
+// console.log(result);
 
 // 42
 // const a = Number(prompt("Month"));

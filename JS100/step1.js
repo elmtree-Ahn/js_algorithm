@@ -1,6 +1,22 @@
+// 46
+const data = 20;
+let arr = "";
+let sum = 0;
+
+for (let i = 1; i <= data; i++) {
+  arr = arr + String(i);
+}
+
+let result = arr.split("");
+
+for (let i = 0; i < result.length; i++) {
+  sum = sum + Number(result[i]);
+}
+console.log(sum);
+
 //45
-const now = new Date();
-console.log(now.getFullYear());
+// const now = new Date();
+// console.log(now.getFullYear());
 
 // 44
 // const data = 3849;

@@ -1,18 +1,37 @@
+// 47
+const people = {
+  이호준: "01050442903",
+  이호상: "01051442904",
+  이준호: "01050342904",
+  이호준: "01050442903",
+  이준: "01050412904",
+  이호: "01050443904",
+  이호준: "01050442903"
+};
+
+let result = new Set();
+for (let key in people) {
+  result.add(people[key]);
+}
+
+// 명수 춢력
+console.log(result);
+
 // 46
-const data = 20;
-let arr = "";
-let sum = 0;
+// const data = 20;
+// let arr = "";
+// let sum = 0;
 
-for (let i = 1; i <= data; i++) {
-  arr = arr + String(i);
-}
+// for (let i = 1; i <= data; i++) {
+//   arr = arr + String(i);
+// }
 
-let result = arr.split("");
+// let result = arr.split("");
 
-for (let i = 0; i < result.length; i++) {
-  sum = sum + Number(result[i]);
-}
-console.log(sum);
+// for (let i = 0; i < result.length; i++) {
+//   sum = sum + Number(result[i]);
+// }
+// console.log(sum);
 
 //45
 // const now = new Date();

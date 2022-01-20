@@ -1,21 +1,35 @@
-// 47
-const people = {
-  이호준: "01050442903",
-  이호상: "01051442904",
-  이준호: "01050342904",
-  이호준: "01050442903",
-  이준: "01050412904",
-  이호: "01050443904",
-  이호준: "01050442903"
-};
+// 48
+const data = "AAABBBcccddd";
+let result = "";
 
-let result = new Set();
-for (let key in people) {
-  result.add(people[key]);
+for (let i = 0; i < data.length; i++) {
+  if (data[i] === data[i].toUpperCase()) {
+    result += data[i].toLowerCase();
+  } else {
+    result += data[i].toUpperCase();
+  }
 }
 
-// 명수 춢력
 console.log(result);
+
+// 47
+// const people = {
+//   이호준: "01050442903",
+//   이호상: "01051442904",
+//   이준호: "01050342904",
+//   이호준: "01050442903",
+//   이준: "01050412904",
+//   이호: "01050443904",
+//   이호준: "01050442903"
+// };
+
+// let result = new Set();
+// for (let key in people) {
+//   result.add(people[key]);
+// }
+
+// // 명수 춢력
+// console.log(result);
 
 // 46
 // const data = 20;

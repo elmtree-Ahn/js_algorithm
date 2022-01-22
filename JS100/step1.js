@@ -1,13 +1,37 @@
+// 50
+function bubble(arr) {
+  let result = arr.slice(); // 원본 배열 복사
+
+  for (let i = 0; i < result.length - 1; i++) {
+    for (let j = 0; j < result.length - i; j++) {
+      if (result[j] > result[j + 1]) {
+        let temp = result[j];
+        result[j] = result[j + 1];
+        result[j + 1] = temp;
+      }
+    }
+  }
+  return result;
+}
+
+const items = prompt("입력해주세요.")
+  .split(" ")
+  .map((n) => {
+    return parseInt(n, 10);
+  });
+
+console.log(bubble(items));
+
 // 49
-const data = "10 9 8 7 6 5 4 3 1 2".split(" ").map((a) => {
-  return parseInt(a, 10);
-});
+// const data = "10 9 8 7 6 5 4 3 1 2".split(" ").map((a) => {
+//   return parseInt(a, 10);
+// });
 
-data.sort((a, b) => {
-  return b - a;
-});
+// data.sort((a, b) => {
+//   return b - a;
+// });
 
-console.log(data[0]);
+// console.log(data[0]);
 
 // 48
 // const data = "AAABBBcccddd";

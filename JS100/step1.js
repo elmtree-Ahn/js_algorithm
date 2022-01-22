@@ -1,15 +1,13 @@
 // 49
-let numbers = prompt("10개의 숫자를 입력하세요")
-  .split(" ")
-  .map((n) => {
-    return parseInt(n, 10);
-  });
+const data = "10 9 8 7 6 5 4 3 1 2".split(" ").map((a) => {
+  return parseInt(a, 10);
+});
 
-numbers.sort((a, b) => {
+data.sort((a, b) => {
   return b - a;
 });
 
-console.log(numbers[0]);
+console.log(data[0]);
 
 // 48
 // const data = "AAABBBcccddd";

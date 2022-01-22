@@ -1,16 +1,29 @@
+// 49
+let numbers = prompt("10개의 숫자를 입력하세요")
+  .split(" ")
+  .map((n) => {
+    return parseInt(n, 10);
+  });
+
+numbers.sort((a, b) => {
+  return b - a;
+});
+
+console.log(numbers[0]);
+
 // 48
-const data = "AAABBBcccddd";
-let result = "";
+// const data = "AAABBBcccddd";
+// let result = "";
 
-for (let i = 0; i < data.length; i++) {
-  if (data[i] === data[i].toUpperCase()) {
-    result += data[i].toLowerCase();
-  } else {
-    result += data[i].toUpperCase();
-  }
-}
+// for (let i = 0; i < data.length; i++) {
+//   if (data[i] === data[i].toUpperCase()) {
+//     result += data[i].toLowerCase();
+//   } else {
+//     result += data[i].toUpperCase();
+//   }
+// }
 
-console.log(result);
+// console.log(result);
 
 // 47
 // const people = {

@@ -1,26 +1,66 @@
-// 50
-function bubble(arr) {
-  let result = arr.slice(); // 원본 배열 복사
+// 51
+function mergeSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
 
-  for (let i = 0; i < result.length - 1; i++) {
-    for (let j = 0; j < result.length - i; j++) {
-      if (result[j] > result[j + 1]) {
-        let temp = result[j];
-        result[j] = result[j + 1];
-        result[j + 1] = temp;
-      }
+  const mid = Math.floor(arr.length / 2);
+
+  const left = arr.slice(0, mid);
+  const right = arr.slice(mid);
+
+  return merge(mergeSort(left), mergeSort(right));
+}
+
+function merge(left, right) {
+  let result = [];
+
+  while (left.length && right.length) {
+    if (left[0] < right[0]) {
+      result.push(left.shift());
+    } else {
+      result.push(right.shift());
     }
   }
+  while (left.length) {
+    result.push(left.shift());
+  }
+  while (right.length) {
+    result.push(right.shift());
+  }
+
   return result;
 }
 
-const items = prompt("입력해주세요.")
+const array = prompt("배열을 입력하세요")
   .split(" ")
-  .map((n) => {
-    return parseInt(n, 10);
-  });
+  .map((n) => parseInt(n, 10));
 
-console.log(bubble(items));
+console.log(mergeSort(array));
+
+// 50
+// function bubble(arr) {
+//   let result = arr.slice(); // 원본 배열 복사
+
+//   for (let i = 0; i < result.length - 1; i++) {
+//     for (let j = 0; j < result.length - i; j++) {
+//       if (result[j] > result[j + 1]) {
+//         let temp = result[j];
+//         result[j] = result[j + 1];
+//         result[j + 1] = temp;
+//       }
+//     }
+//   }
+//   return result;
+// }
+
+// const items = prompt("입력해주세요.")
+//   .split(" ")
+//   .map((n) => {
+//     return parseInt(n, 10);
+//   });
+
+// console.log(bubble(items));
 
 // 49
 // const data = "10 9 8 7 6 5 4 3 1 2".split(" ").map((a) => {

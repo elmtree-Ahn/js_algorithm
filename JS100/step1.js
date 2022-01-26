@@ -1,18 +1,46 @@
 // test
-let data = ["a", "b", "c"];
-
-const handel = (check) => {
-  if (!data.includes(check)) {
-    data.push(check);
-  } else if (data.includes(check)) {
-    data = data.filter((item) => item !== check);
-  }
+export const TestComent = ({ text }) => {
+  return (
+    <TestComentST>
+      <img src={infoImg} alt="" />
+      <div className="text">
+        {text.split("\\n").map((line) => {
+          return (
+            <>
+              {line}
+              <br />
+            </>
+          );
+        })}
+      </div>
+    </TestComentST>
+  );
 };
 
-handel("d");
-handel("d");
+const data = [{ id: 1 }, { id: 2 }, { id: 3 }];
 
-console.log(data);
+let Arr = [];
+
+data.map((i, a) => {
+  return (Arr[a] = a);
+});
+
+console.log(Arr);
+// test
+// let data = ["a", "b", "c"];
+
+// const handel = (check) => {
+//   if (!data.includes(check)) {
+//     data.push(check);
+//   } else if (data.includes(check)) {
+//     data = data.filter((item) => item !== check);
+//   }
+// };
+
+// handel("d");
+// handel("d");
+
+// console.log(data);
 
 // 51
 // function mergeSort(arr) {

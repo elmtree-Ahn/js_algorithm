@@ -1,4 +1,11 @@
 // test
+const data = [1, 2, 3];
+
+console.log(data[data.length - 1]);
+
+// let data = [false, false, true];
+
+// console.log(data.includes(true));
 
 // const data = [1, 2, 3];
 // console.log(data[-1]);

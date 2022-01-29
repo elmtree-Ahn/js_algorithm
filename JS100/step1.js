@@ -1,31 +1,45 @@
 // test
-export const TestComent = ({ text }) => {
-  return (
-    <TestComentST>
-      <img src={infoImg} alt="" />
-      <div className="text">
-        {text.split("\\n").map((line) => {
-          return (
-            <>
-              {line}
-              <br />
-            </>
-          );
-        })}
-      </div>
-    </TestComentST>
-  );
-};
 
-const data = [{ id: 1 }, { id: 2 }, { id: 3 }];
+// const data = [1, 2, 3];
+// console.log(data[-1]);
+// console.log(Boolean([]));
+// setInterval(()=>{
+//   setSecond(second - 1);
+// }, 1000)
+// let data = "zzzzz";
+// console.log(Boolean(parseInt(data)));
+// let arr = ["ㄱ", "ㄴ", "ㄷ"];
 
-let Arr = [];
+// console.log(arr["ㄱ"]);
 
-data.map((i, a) => {
-  return (Arr[a] = a);
-});
+// test
+// export const TestComent = ({ text }) => {
+//   return (
+//     <TestComentST>
+//       <img src={infoImg} alt="" />
+//       <div className="text">
+//         {text.split("\\n").map((line) => {
+//           return (
+//             <>
+//               {line}
+//               <br />
+//             </>
+//           );
+//         })}
+//       </div>
+//     </TestComentST>
+//   );
+// };
 
-console.log(Arr);
+// const data = [{ id: 1 }, { id: 2 }, { id: 3 }];
+
+// let Arr = [];
+
+// data.map((i, a) => {
+//   return (Arr[a] = a);
+// });
+
+// console.log(Arr);
 // test
 // let data = ["a", "b", "c"];
 

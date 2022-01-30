@@ -1,7 +1,22 @@
 // test
-const data = [1, 2, 3];
+let data = ["0점"];
 
-console.log(data[data.length - 1]);
+console.log(parseInt(data[0].replace("점", "")));
+
+// const items = [1, 2, 3, 4, 5];
+// return (
+//   <div>
+//     <ul>
+//       {items.map((item) => (
+//         <li>{item}</li>
+//       ))}
+//     </ul>
+//   </div>
+// );
+
+// const data = [1, 2, 3];
+
+// console.log(data[data.length - 1]);
 
 // let data = [false, false, true];
 

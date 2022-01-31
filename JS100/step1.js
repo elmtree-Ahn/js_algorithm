@@ -1,7 +1,61 @@
 // test
-let data = ["0점"];
 
-console.log(parseInt(data[0].replace("점", "")));
+const data = {
+  유저명: "루피",
+  평가: "평균 이상",
+  점수: 7,
+  평균명: "성인 여성 평균",
+  평균: 8,
+  코멘트1:
+    "면역력 상태 설문(ISQ) 총 10점 중 8점으로, 면역력이 양호한 상태에 해당합니다.",
+  코멘트2:
+    "지난 1년동안 ‘갑작스런 고열’이 자주 발생하였습니다. 질환으로 인한 증상일 수 있으니 병원에 방문하시기 바랍니다. (추천 진료과: 내과)",
+  태그모음: [
+    {
+      id: 0,
+      title: "면역력을 높이는 나의 상태",
+      tag: ["스트레스 낮음", "충분한 운동량"]
+    },
+    {
+      id: 1,
+      title: "면역력을 낮추는 나의 상태",
+      tag: ["당뇨", "수면 부족"]
+    },
+    {
+      id: 2,
+      title: "나에게 자주 발생하는 감염성 질환",
+      tag: ["구내염"]
+    },
+    {
+      id: 3,
+      title: "유지영님의 면역력 증진을 위한 추천",
+      tag: [
+        "규칙적인 운동 (주 3회 이상)",
+        "스트레스 관리",
+        "절주 (일주일 소주 1병 이내)",
+        "적정 체중 유지 (23kg)",
+        "밤 11시 이전 취침"
+      ]
+    }
+  ]
+};
+
+const originalGage = data.점수 * 10;
+const gage = originalGage + "%";
+
+const defualtGage = data.평균 * 10;
+const defualtGagePersent = defualtGage + "%";
+
+const reverseGage = 100 - originalGage + "%";
+
+console.log(gage);
+
+console.log(typeof null);
+console.log(Boolean(null));
+
+// let data = ["0점"];
+
+// console.log(parseInt(data[0].replace("점", "")));
 
 // const items = [1, 2, 3, 4, 5];
 // return (

@@ -1,12 +1,74 @@
 // test
 
-const data = {
-  good: "good",
-  bad: "bad",
-  cool: "cool"
-};
+const data = [
+  {
+    name: "오메가",
+    subcolor: "#B1C9E8",
+    color: "#3D87CB"
+  },
+  {
+    name: "마그네슘",
+    subcolor: "#E9EC6B",
+    color: "#A8AD00"
+  },
+  {
+    name: "유산균",
+    subcolor: "#ACE8FC",
+    color: "#00A9E0"
+  },
+  {
+    name: "비타민B",
+    subcolor: "#FEDFAB",
+    color: "#F19E48"
+  },
+  {
+    name: "비타민C",
+    subcolor: "#FFF790",
+    color: "#FCC400"
+  },
+  {
+    name: "비타민D",
+    subcolor: "#FDD086",
+    color: "#EA7600"
+  },
+  {
+    name: "멀티미네랄",
+    subcolor: "#A5DFD3",
+    color: "#259591"
+  },
+  {
+    name: "밀크씨슬",
+    subcolor: "#E7BAE4",
+    color: "#981E97"
+  },
+  {
+    name: "칼슘",
+    subcolor: "#83786F",
+    color: "#83786F"
+  },
+  {
+    name: "철분",
+    subcolor: "#FFBEC6",
+    color: "#C74E61"
+  }
+];
 
-console.log(data[0]);
+const value = "오메가";
+
+for (let i = 0; i < data.length; i++) {
+  if (data[i].name === value) {
+    console.log(data[i].subcolor);
+    console.log(data[i].color);
+  }
+}
+
+// const data = {
+//   good: "good",
+//   bad: "bad",
+//   cool: "cool"
+// };
+
+// console.log(data[0]);
 
 // const data = {
 //   유저명: "루피",

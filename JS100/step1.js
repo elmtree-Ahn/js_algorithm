@@ -1,66 +1,94 @@
+// 52
+function quickSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
+
+  const pivot = arr[0]; //기준점
+  const left = [];
+  const right = [];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] < pivot) {
+      left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
+    }
+  }
+  return quickSort(left).concat(pivot, quickSort(right));
+}
+
+const array = prompt("배열을 입력하세요")
+  .split(" ")
+  .map((n) => parseInt(n, 10));
+
+console.log(quickSort(array));
+
 // test
 
-const data = [
-  {
-    name: "오메가",
-    subcolor: "#B1C9E8",
-    color: "#3D87CB"
-  },
-  {
-    name: "마그네슘",
-    subcolor: "#E9EC6B",
-    color: "#A8AD00"
-  },
-  {
-    name: "유산균",
-    subcolor: "#ACE8FC",
-    color: "#00A9E0"
-  },
-  {
-    name: "비타민B",
-    subcolor: "#FEDFAB",
-    color: "#F19E48"
-  },
-  {
-    name: "비타민C",
-    subcolor: "#FFF790",
-    color: "#FCC400"
-  },
-  {
-    name: "비타민D",
-    subcolor: "#FDD086",
-    color: "#EA7600"
-  },
-  {
-    name: "멀티미네랄",
-    subcolor: "#A5DFD3",
-    color: "#259591"
-  },
-  {
-    name: "밀크씨슬",
-    subcolor: "#E7BAE4",
-    color: "#981E97"
-  },
-  {
-    name: "칼슘",
-    subcolor: "#83786F",
-    color: "#83786F"
-  },
-  {
-    name: "철분",
-    subcolor: "#FFBEC6",
-    color: "#C74E61"
-  }
-];
+// console.log(Math.floor(2200));
 
-const value = "오메가";
+// const data = [
+//   {
+//     name: "오메가",
+//     subcolor: "#B1C9E8",
+//     color: "#3D87CB"
+//   },
+//   {
+//     name: "마그네슘",
+//     subcolor: "#E9EC6B",
+//     color: "#A8AD00"
+//   },
+//   {
+//     name: "유산균",
+//     subcolor: "#ACE8FC",
+//     color: "#00A9E0"
+//   },
+//   {
+//     name: "비타민B",
+//     subcolor: "#FEDFAB",
+//     color: "#F19E48"
+//   },
+//   {
+//     name: "비타민C",
+//     subcolor: "#FFF790",
+//     color: "#FCC400"
+//   },
+//   {
+//     name: "비타민D",
+//     subcolor: "#FDD086",
+//     color: "#EA7600"
+//   },
+//   {
+//     name: "멀티미네랄",
+//     subcolor: "#A5DFD3",
+//     color: "#259591"
+//   },
+//   {
+//     name: "밀크씨슬",
+//     subcolor: "#E7BAE4",
+//     color: "#981E97"
+//   },
+//   {
+//     name: "칼슘",
+//     subcolor: "#83786F",
+//     color: "#83786F"
+//   },
+//   {
+//     name: "철분",
+//     subcolor: "#FFBEC6",
+//     color: "#C74E61"
+//   }
+// ];
 
-for (let i = 0; i < data.length; i++) {
-  if (data[i].name === value) {
-    console.log(data[i].subcolor);
-    console.log(data[i].color);
-  }
-}
+// const value = "오메가";
+
+// for (let i = 0; i < data.length; i++) {
+//   if (data[i].name === value) {
+//     console.log(data[i].subcolor);
+//     console.log(data[i].color);
+//   }
+// }
 
 // const data = {
 //   good: "good",

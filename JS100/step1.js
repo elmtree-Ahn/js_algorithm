@@ -1,28 +1,77 @@
-// 52
-function quickSort(arr) {
-  if (arr.length <= 1) {
-    return arr;
-  }
+// 53
+function mathBrackets(e) {
+  let count = 0;
 
-  const pivot = arr[0]; //기준점
-  const left = [];
-  const right = [];
-
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] < pivot) {
-      left.push(arr[i]);
-    } else {
-      right.push(arr[i]);
+  //괄호 개수가 같지 않으면 false
+  for (let i = 0; i < e.length; i++) {
+    if (e[i] === "(") {
+      count++;
+    }
+    if (e[i] === ")") {
+      count--;
     }
   }
-  return quickSort(left).concat(pivot, quickSort(right));
+  if (count !== 0) {
+    return false;
+  }
+
+  let 괄호 = [];
+  for (let i in e) {
+    if (e[i] === "(") {
+      괄호.push("(");
+    }
+
+    if (e[i] === ")") {
+      if (괄호.length === 0) {
+        return false;
+      }
+      괄호.pop();
+    }
+  }
+  return true;
 }
 
-const array = prompt("배열을 입력하세요")
-  .split(" ")
-  .map((n) => parseInt(n, 10));
+const n = prompt("입력해주세요.").split("");
 
-console.log(quickSort(array));
+if (mathBrackets(n) === true) {
+  console.log("YES");
+} else {
+  console.log("NO");
+}
+
+// test
+// const data = [
+//   [1, 2, 3],
+//   ["a", "b", "c"]
+// ];
+
+// console.log(data[0][-1]);
+
+// 52
+// function quickSort(arr) {
+//   if (arr.length <= 1) {
+//     return arr;
+//   }
+
+//   const pivot = arr[0]; //기준점
+//   const left = [];
+//   const right = [];
+
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] < pivot) {
+//       left.push(arr[i]);
+//     } else {
+//       right.push(arr[i]);
+//     }
+//   }
+//   return quickSort(left).concat(pivot, quickSort(right));
+// }
+
+// const array = prompt("배열을 입력하세요")
+//   .split(" ")
+//   .map((n) => parseInt(n, 10));
+
+// console.log(quickSort(array));
 
 // test
 

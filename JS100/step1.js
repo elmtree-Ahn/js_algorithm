@@ -1,22 +1,44 @@
-// 54
-function sol(l) {
-  l.sort((a, b) => {
-    return a - b;
-  });
+// 50 혼자 다시 풀기
+const inputData = "9 4 8 2 7 1 6".split(" ").map((item) => {
+  return parseInt(item, 10);
+});
 
-  for (let i = 0; i < l.length - 1; i++) {
-    if (l[i] + 1 !== l[i + 1]) {
-      return "NO";
+const Bubble = (arr) => {
+  const result = arr.slice();
+  for (let i = 0; i < result.length - 1; i++) {
+    for (let j = 0; j < result.length - i; j++) {
+      if (result[j] > result[j + 1]) {
+        let value = result[j];
+        result[j] = result[j + 1];
+        result[j + 1] = value;
+      }
     }
   }
-  return "YES";
-}
 
-const n = prompt("입력해주세요")
-  .split(" ")
-  .map((n) => parseInt(n, 10));
+  return result;
+};
 
-console.log(sol(n));
+console.log(Bubble(inputData));
+
+// 54
+// function sol(l) {
+//   l.sort((a, b) => {
+//     return a - b;
+//   });
+
+//   for (let i = 0; i < l.length - 1; i++) {
+//     if (l[i] + 1 !== l[i + 1]) {
+//       return "NO";
+//     }
+//   }
+//   return "YES";
+// }
+
+// const n = prompt("입력해주세요")
+//   .split(" ")
+//   .map((n) => parseInt(n, 10));
+
+// console.log(sol(n));
 
 // 53
 // function mathBrackets(e) {

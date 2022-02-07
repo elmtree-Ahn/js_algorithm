@@ -1,12 +1,49 @@
-// 50 혼자 다시 풀기
-const data = "9 2 8 4 1"
-  .split(" ")
-  .map((item) => {
-    return parseInt(item, 10);
-  })
-  .sort();
+// 51
+function mergeSort(arr) {
+  if (arr.length <= 1) {
+    return arr;
+  }
 
-console.log(data);
+  const mid = Math.floor(arr.length / 2);
+
+  const left = arr.slice(0, mid);
+  const right = arr.slice(mid);
+
+  return merge(mergeSort(left), mergeSort(right));
+}
+
+function merge(left, right) {
+  let result = [];
+
+  while (left.length && right.length) {
+    if (left[0] < right[0]) {
+      result.push(left.shift());
+    } else {
+      result.push(right.shift());
+    }
+  }
+  while (left.length) {
+    result.push(left.shift());
+  }
+  while (right.length) {
+    result.push(right.shift());
+  }
+
+  return result;
+}
+
+const array = "9 2 8 4 7 1".split(" ").map((n) => parseInt(n, 10));
+
+console.log(mergeSort(array));
+// 50 혼자 다시 풀기
+// const data = "9 2 8 4 1"
+//   .split(" ")
+//   .map((item) => {
+//     return parseInt(item, 10);
+//   })
+//   .sort();
+
+// console.log(data);
 
 // 54
 // function sol(l) {

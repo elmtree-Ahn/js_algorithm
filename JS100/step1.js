@@ -1,24 +1,12 @@
 // 50 혼자 다시 풀기
-const inputData = "9 4 8 2 7 1 6".split(" ").map((item) => {
-  return parseInt(item, 10);
-});
+const data = "9 2 8 4 1"
+  .split(" ")
+  .map((item) => {
+    return parseInt(item, 10);
+  })
+  .sort();
 
-const Bubble = (arr) => {
-  const result = arr.slice();
-  for (let i = 0; i < result.length - 1; i++) {
-    for (let j = 0; j < result.length - i; j++) {
-      if (result[j] > result[j + 1]) {
-        let value = result[j];
-        result[j] = result[j + 1];
-        result[j + 1] = value;
-      }
-    }
-  }
-
-  return result;
-};
-
-console.log(Bubble(inputData));
+console.log(data);
 
 // 54
 // function sol(l) {

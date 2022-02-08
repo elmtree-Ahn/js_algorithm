@@ -1,40 +1,65 @@
-// 51
-function mergeSort(arr) {
+// 52
+function quickSort(arr) {
   if (arr.length <= 1) {
     return arr;
   }
 
-  const mid = Math.floor(arr.length / 2);
+  const pivot = arr[0];
+  const left = [];
+  const right = [];
 
-  const left = arr.slice(0, mid);
-  const right = arr.slice(mid);
-
-  return merge(mergeSort(left), mergeSort(right));
-}
-
-function merge(left, right) {
-  let result = [];
-
-  while (left.length && right.length) {
-    if (left[0] < right[0]) {
-      result.push(left.shift());
+  for (let i = 1; i < arr.length; i++) {
+    if (pivot > arr[i]) {
+      left.push(arr[i]);
     } else {
-      result.push(right.shift());
+      right.push(arr[i]);
     }
   }
-  while (left.length) {
-    result.push(left.shift());
-  }
-  while (right.length) {
-    result.push(right.shift());
-  }
-
-  return result;
+  return quickSort(left).concat(pivot, quickSort(right));
 }
 
-const array = "9 2 8 4 7 1".split(" ").map((n) => parseInt(n, 10));
+const array = "6 7 2 9 4 1 3".split(" ").map((n) => parseInt(n, 10));
 
-console.log(mergeSort(array));
+console.log(quickSort(array));
+
+// // 51
+// function mergeSort(arr) {
+//   if (arr.length <= 1) {
+//     return arr;
+//   }
+
+//   const mid = Math.floor(arr.length / 2);
+
+//   const left = arr.slice(0, mid);
+//   const right = arr.slice(mid);
+
+//   return merge(mergeSort(left), mergeSort(right));
+// }
+
+// function merge(left, right) {
+//   let result = [];
+
+//   while (left.length && right.length) {
+//     if (left[0] < right[0]) {
+//       result.push(left.shift());
+//     } else {
+//       result.push(right.shift());
+//     }
+//   }
+//   while (left.length) {
+//     result.push(left.shift());
+//   }
+//   while (right.length) {
+//     result.push(right.shift());
+//   }
+
+//   return result;
+// }
+
+// const array = "9 2 8 4 7 1".split(" ").map((n) => parseInt(n, 10));
+
+// console.log(mergeSort(array));
+
 // 50 혼자 다시 풀기
 // const data = "9 2 8 4 1"
 //   .split(" ")

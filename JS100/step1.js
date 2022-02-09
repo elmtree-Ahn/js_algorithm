@@ -1,26 +1,113 @@
-// 52
-function quickSort(arr) {
-  if (arr.length <= 1) {
-    return arr;
-  }
+// 53 해설 보고 다시 풀어보기
 
-  const pivot = arr[0];
-  const left = [];
-  const right = [];
-
-  for (let i = 1; i < arr.length; i++) {
-    if (pivot > arr[i]) {
-      left.push(arr[i]);
+const YesOrNo = (arr) => {
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === "(") {
+      count++;
     } else {
-      right.push(arr[i]);
+      count--;
     }
   }
-  return quickSort(left).concat(pivot, quickSort(right));
-}
 
-const array = "6 7 2 9 4 1 3".split(" ").map((n) => parseInt(n, 10));
+  if (count !== 0) {
+    return "NO";
+  }
 
-console.log(quickSort(array));
+  const bracket = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == "(") {
+      bracket.push("(");
+    } else {
+      if (bracket.length === 0) {
+        return "NO";
+      }
+      bracket.pop();
+    }
+  }
+
+  return "YES";
+};
+
+const data = "(()())()".split("");
+
+console.log(YesOrNo(data));
+
+// 53 내 풀이
+// 이 풀이는 순서가 뒤바뀐 괄호를 체크할 수가 없다.!
+// const data = "(())".split("");
+
+// function YesOrNO(arr) {
+//   const left = [];
+//   const right = [];
+
+//   for (let i = 0; i < data.length; i++) {
+//     if (arr[i] === "(") {
+//       left.push(arr[i]);
+//     } else {
+//       right.push(arr[i]);
+//     }
+//   }
+
+//   if (left.length === right.length) {
+//     return "YES";
+//   } else {
+//     return "NO";
+//   }
+// }
+
+// console.log(YesOrNO(data));
+
+// 52 복습
+
+// const quickSort = (arr) => {
+//   if (arr.length <= 1) {
+//     return arr;
+//   }
+
+//   const pivot = arr[0];
+//   const left = [];
+//   const right = [];
+
+//   for (let i = 1; i < arr.length; i++) {
+//     if (arr[i] < pivot) {
+//       left.push(arr[i]);
+//     } else {
+//       right.push(arr[i]);
+//     }
+//   }
+
+//   return quickSort(left).concat(pivot, quickSort(right));
+// };
+
+// const array = [2, 5, 4, 1, 6, 9];
+
+// console.log(quickSort(array));
+
+// 52
+// function quickSort(arr) {
+//   if (arr.length <= 1) {
+//     return arr;
+//   }
+
+//   const pivot = arr[0];
+//   const left = [];
+//   const right = [];
+
+//   for (let i = 1; i < arr.length; i++) {
+//     if (pivot > arr[i]) {
+//       left.push(arr[i]);
+//     } else {
+//       right.push(arr[i]);
+//     }
+//   }
+//   return quickSort(left).concat(pivot, quickSort(right));
+// }
+
+// const array = "6 7 2 9 4 1 3".split(" ").map((n) => parseInt(n, 10));
+
+// console.log(quickSort(array));
 
 // // 51
 // function mergeSort(arr) {

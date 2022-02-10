@@ -1,21 +1,29 @@
 // 54
 
-const IsContunuousNumber = (arr) => {
-  const sortData = arr.sort();
-  // return sortData;
-  for (let i = 0; i < arr.length - 1; i++) {
-    if (sortData[i] + 1 !== sortData[i + 1]) {
-      return "NO";
-    }
-  }
-  return "YES";
-};
+// const IsContunuousNumber = (arr) => {
+//   const sortData = arr.sort();
+//   for (let i = 0; i < arr.length - 1; i++) {
+//     if (sortData[i] + 1 !== sortData[i + 1]) {
+//       return "NO";
+//     }
+//   }
+//   return "YES";
+// };
 
-const data = "4 3 2 1 5 7".split(" ").map((el) => {
-  return parseInt(el, 10);
-});
+// const data = "4 3 2 1 5 7".split(" ").map((el) => {
+//   return parseInt(el, 10);
+// });
 
-console.log(IsContunuousNumber(data));
+// console.log(IsContunuousNumber(data));
+
+// 1 복습
+// let nums = [100, 200, 300, 400, 500];
+// console.log(nums.splice(0, 3));
+
+// 2 복습
+let arr = [200, 100, 300];
+arr.splice(2, 0, 10000);
+console.log(arr);
 
 // 53 해설 보고 다시 풀어보기
 

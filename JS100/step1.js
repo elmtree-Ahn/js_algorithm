@@ -1,38 +1,57 @@
-// 53 해설 보고 다시 풀어보기
+// 54
 
-const YesOrNo = (arr) => {
-  let count = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === "(") {
-      count++;
-    } else {
-      count--;
+const IsContunuousNumber = (arr) => {
+  const sortData = arr.sort();
+  // return sortData;
+  for (let i = 0; i < arr.length - 1; i++) {
+    if (sortData[i] + 1 !== sortData[i + 1]) {
+      return "NO";
     }
   }
-
-  if (count !== 0) {
-    return "NO";
-  }
-
-  const bracket = [];
-
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] == "(") {
-      bracket.push("(");
-    } else {
-      if (bracket.length === 0) {
-        return "NO";
-      }
-      bracket.pop();
-    }
-  }
-
   return "YES";
 };
 
-const data = "(()())()".split("");
+const data = "4 3 2 1 5 7".split(" ").map((el) => {
+  return parseInt(el, 10);
+});
 
-console.log(YesOrNo(data));
+console.log(IsContunuousNumber(data));
+
+// 53 해설 보고 다시 풀어보기
+
+// const YesOrNo = (arr) => {
+//   let count = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] === "(") {
+//       count++;
+//     } else {
+//       count--;
+//     }
+//   }
+
+//   if (count !== 0) {
+//     return "NO";
+//   }
+
+//   const bracket = [];
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] == "(") {
+//       bracket.push("(");
+//     } else {
+//       if (bracket.length === 0) {
+//         return "NO";
+//       }
+//       bracket.pop();
+//     }
+//   }
+
+//   return "YES";
+// };
+
+// const data = "(()())()".split("");
+
+// console.log(YesOrNo(data));
 
 // 53 내 풀이
 // 이 풀이는 순서가 뒤바뀐 괄호를 체크할 수가 없다.!

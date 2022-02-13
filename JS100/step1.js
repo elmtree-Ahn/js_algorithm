@@ -1,32 +1,54 @@
+// 55번 복습
+// const route = [];
+
+// function hanoi(num, start, end, temp){
+//   //원판이 한 개일 때에는 바로 옮기면 됩니다.
+//   if (num === 1) {
+//     route.push([start, end]);
+//     return NaN;
+//   }
+
+//   //원반이 n-1개를 경유기둥으로 옮기고
+//   hanoi(num-1, start, temp, end);
+//   //가장 큰 원반은 목표기둥으로
+//   route.push([start, end]);
+//   //경유기둥과 시작기둥을 바꿉니다.
+//   hanoi(num-1, temp, end, start);
+// }
+
+// hanoi(3, 'A', 'B', 'C');
+// console.log(route);
+// console.log(route.length);
+
 // 56
-const nationWidth = {
-  korea: 220877,
-  Rusia: 17098242,
-  China: 9596961,
-  France: 543965,
-  Japan: 377915,
-  England: 242900
-};
+// const nationWidth = {
+//   korea: 220877,
+//   Rusia: 17098242,
+//   China: 9596961,
+//   France: 543965,
+//   Japan: 377915,
+//   England: 242900
+// };
 
-const w = nationWidth["korea"];
+// const w = nationWidth["korea"];
 
-delete nationWidth["korea"];
+// delete nationWidth["korea"];
 
-const entry = Object.entries(nationWidth);
-const values = Object.values(nationWidth);
+// const entry = Object.entries(nationWidth);
+// const values = Object.values(nationWidth);
 
-//gap에 최댓값 저장
-let gap = Math.max.apply(null, values);
-let item = [];
+// //gap에 최댓값 저장
+// let gap = Math.max.apply(null, values);
+// let item = [];
 
-for (let i in entry) {
-  if (gap > Math.abs(entry[i][1] - w)) {
-    gap = Math.abs(entry[i][1] - w);
-    item = entry[i];
-  }
-}
+// for (let i in entry) {
+//   if (gap > Math.abs(entry[i][1] - w)) {
+//     gap = Math.abs(entry[i][1] - w);
+//     item = entry[i];
+//   }
+// }
 
-console.log(item[0], item[1] - w);
+// console.log(item[0], item[1] - w);
 
 // 55
 // const route = [];

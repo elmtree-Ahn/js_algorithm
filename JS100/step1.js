@@ -1,3 +1,61 @@
+// 56번 복습
+
+const nationWidth = {
+  Korea: 220877,
+  Rusia: 220888,
+  China: 9596961,
+  France: 543965,
+  Japan: 377915,
+  England: 24022900
+};
+
+const width = nationWidth["Korea"];
+delete nationWidth["Korea"];
+// console.log(nationWidth);
+
+const nationArr = Object.entries(nationWidth);
+// console.log(nationArr);
+const values = Object.values(nationWidth);
+// console.log(values);
+
+let gap = Math.max.apply(null, values);
+console.log(gap);
+
+let result = [];
+
+for (let i in nationArr) {
+  if (gap > nationArr[i][1] - width) {
+    gap = nationArr[i][1] - width;
+    result = nationArr[i];
+  }
+}
+
+console.log(result);
+
+// var array = ["a", "b"];
+// var elements = [0, 1, 2];
+// array.push.apply(array, elements);
+// console.log(array); // ["a", "b", 0, 1, 2]
+
+// const nationWidth = {
+//   korea: 220877,
+//   Rusia: 17098242,
+//   China: 9596961,
+//   France: 543965,
+//   Japan: 377915,
+//   England: 242900
+// };
+
+// for (const nation in nationWidth) {
+//   let result = "";
+//   let gap = 0;
+//   let subGap = 0;
+//   if (nation !== "korea") {
+//     subGap = Math.abs(nationWidth["korea"] - nationWidth[nation]);
+
+//   }
+// }
+
 // 55번 복습
 // const route = [];
 

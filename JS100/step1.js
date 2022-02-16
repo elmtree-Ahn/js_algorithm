@@ -1,36 +1,50 @@
-// 56번 복습
+// 57
+const obj = {};
 
-const nationWidth = {
-  Korea: 220877,
-  Rusia: 220888,
-  China: 9596961,
-  France: 543965,
-  Japan: 377915,
-  England: 24022900
-};
-
-const width = nationWidth["Korea"];
-delete nationWidth["Korea"];
-// console.log(nationWidth);
-
-const nationArr = Object.entries(nationWidth);
-// console.log(nationArr);
-const values = Object.values(nationWidth);
-// console.log(values);
-
-let gap = Math.max.apply(null, values);
-console.log(gap);
-
-let result = [];
-
-for (let i in nationArr) {
-  if (gap > nationArr[i][1] - width) {
-    gap = nationArr[i][1] - width;
-    result = nationArr[i];
+for (let i = 0; i <= 1000; i++) {
+  let tmp = i;
+  while (tmp > 0) {
+    let num = tmp % 10;
+    if (obj[num]) {
+      obj[num]++;
+    } else {
+      obj[num] = 1;
+    }
+    tmp = parseInt(tmp / 10, 10);
   }
 }
 
-console.log(result);
+console.log(obj[1]);
+
+// 56번 복습 일본으로 해보기
+// const nationWidth = {
+//   korea: 220877,
+//   Rusia: 17098242,
+//   China: 9596961,
+//   France: 543965,
+//   Japan: 377915
+//   England: 242900
+// };
+
+// const width = nationWidth["Japan"];
+// delete nationWidth["Japan"];
+
+// const entry = Object.entries(nationWidth);
+// // console.log(entry);
+// const values = Object.values(nationWidth);
+// // console.log(values);
+
+// let gap = Math.max.apply(null, values);
+// let result = [];
+
+// for (let i in entry) {
+//   if (gap > Math.abs(entry[i][1] - width)) {
+//     gap = Math.abs(entry[i][1] - width);
+//     result = entry[i];
+//   }
+// }
+
+// console.log(result);
 
 // var array = ["a", "b"];
 // var elements = [0, 1, 2];

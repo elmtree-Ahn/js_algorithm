@@ -1,20 +1,33 @@
-// 57
-const obj = {};
-
+// 57 복습 for in 써보기
+let s = "";
 for (let i = 0; i <= 1000; i++) {
-  let tmp = i;
-  while (tmp > 0) {
-    let num = tmp % 10;
-    if (obj[num]) {
-      obj[num]++;
-    } else {
-      obj[num] = 1;
-    }
-    tmp = parseInt(tmp / 10, 10);
+  s += i;
+}
+let count = 0;
+for (let j in s) {
+  if (s[j] == 1) {
+    count++;
   }
 }
+console.log(count);
 
-console.log(obj[1]);
+// 57
+// const obj = {};
+
+// for (let i = 0; i <= 1000; i++) {
+//   let tmp = i;
+//   while (tmp > 0) {
+//     let num = tmp % 10;
+//     if (obj[num]) {
+//       obj[num]++;
+//     } else {
+//       obj[num] = 1;
+//     }
+//     tmp = parseInt(tmp / 10, 10);
+//   }
+// }
+
+// console.log(obj[1]);
 
 // 56번 복습 일본으로 해보기
 // const nationWidth = {

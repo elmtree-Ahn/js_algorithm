@@ -1,9 +1,29 @@
+// 57번 복습
+const data = 1000;
+
+let arr = "";
+let count = 0;
+
+for (let i = 0; i <= data; i++) {
+  arr += i;
+}
+
+arr = arr.split("");
+
+for (let i in arr) {
+  if (arr[i] === "1") {
+    count++;
+  }
+}
+
+console.log(count);
+
 // 58
 // 내장함수 사용
-const n = prompt("숫자를 입력해주세요.");
-parseInt(n, 10);
+// const n = prompt("숫자를 입력해주세요.");
+// parseInt(n, 10);
 
-console.log(n.toLocaleString());
+// console.log(n.toLocaleString());
 
 // 57 복습 for in 써보기
 // let s = "";

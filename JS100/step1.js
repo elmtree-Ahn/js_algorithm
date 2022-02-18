@@ -1,15 +1,22 @@
+// 58
+// 내장함수 사용
+const n = prompt("숫자를 입력해주세요.");
+parseInt(n, 10);
+
+console.log(n.toLocaleString());
+
 // 57 복습 for in 써보기
-let s = "";
-for (let i = 0; i <= 1000; i++) {
-  s += i;
-}
-let count = 0;
-for (let j in s) {
-  if (s[j] == 1) {
-    count++;
-  }
-}
-console.log(count);
+// let s = "";
+// for (let i = 0; i <= 1000; i++) {
+//   s += i;
+// }
+// let count = 0;
+// for (let j in s) {
+//   if (s[j] == 1) {
+//     count++;
+//   }
+// }
+// console.log(count);
 
 // 57
 // const obj = {};

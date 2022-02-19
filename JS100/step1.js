@@ -1,22 +1,26 @@
+// 58
+const data = parseInt("123456789", 10).toLocaleString("ko-KR");
+console.log(data);
+
 // 57번 복습
-const data = 1000;
+// const data = 1000;
 
-let arr = "";
-let count = 0;
+// let arr = "";
+// let count = 0;
 
-for (let i = 0; i <= data; i++) {
-  arr += i;
-}
+// for (let i = 0; i <= data; i++) {
+//   arr += i;
+// }
 
-arr = arr.split("");
+// arr = arr.split("");
 
-for (let i in arr) {
-  if (arr[i] === "1") {
-    count++;
-  }
-}
+// for (let i in arr) {
+//   if (arr[i] === "1") {
+//     count++;
+//   }
+// }
 
-console.log(count);
+// console.log(count);
 
 // 58
 // 내장함수 사용

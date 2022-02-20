@@ -1,6 +1,25 @@
+// 59
+const length = 50;
+const data = "hi";
+let result = "";
+
+let blank = (length - data.length) / 2;
+
+for (let i = 0; i < blank; i++) {
+  result += "=";
+}
+
+result += data;
+
+for (let j = 0; j < blank; j++) {
+  result += "=";
+}
+
+console.log(result);
+
 // 58
-const data = parseInt("123456789", 10).toLocaleString("ko-KR");
-console.log(data);
+// const data = parseInt("123456789", 10).toLocaleString("ko-KR");
+// console.log(data);
 
 // 57번 복습
 // const data = 1000;

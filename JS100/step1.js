@@ -1,21 +1,47 @@
+// 60
+const students = [
+  "강은지",
+  "김유정",
+  "박현서",
+  "최성훈",
+  "홍유진",
+  "박지호",
+  "권윤일",
+  "김채리",
+  "한지호",
+  "김진이",
+  "김민호",
+  "강채연"
+];
+
+for (let i in students.sort()) {
+  console.log(`번호: ${parseInt(i, 10) + 1}, 이름: ${students.sort()[i]}`);
+}
+
+// padStart, padEnd
+// const data = "hello";
+
+// const result = data.padStart(6, "!");
+// console.log(result);
+
 // 59
-const length = 50;
-const data = "hi";
-let result = "";
+// const length = 50;
+// const data = "hi";
+// let result = "";
 
-let blank = (length - data.length) / 2;
+// let blank = (length - data.length) / 2;
 
-for (let i = 0; i < blank; i++) {
-  result += "=";
-}
+// for (let i = 0; i < blank; i++) {
+//   result += "=";
+// }
 
-result += data;
+// result += data;
 
-for (let j = 0; j < blank; j++) {
-  result += "=";
-}
+// for (let j = 0; j < blank; j++) {
+//   result += "=";
+// }
 
-console.log(result);
+// console.log(result);
 
 // 58
 // const data = parseInt("123456789", 10).toLocaleString("ko-KR");

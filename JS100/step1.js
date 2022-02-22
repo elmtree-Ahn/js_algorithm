@@ -1,22 +1,41 @@
-// 60
-const students = [
-  "강은지",
-  "김유정",
-  "박현서",
-  "최성훈",
-  "홍유진",
-  "박지호",
-  "권윤일",
-  "김채리",
-  "한지호",
-  "김진이",
-  "김민호",
-  "강채연"
-];
+// 61
+const data = "aaababbbcdddd";
+let obj = {};
+let result = "";
 
-for (let i in students.sort()) {
-  console.log(`번호: ${parseInt(i, 10) + 1}, 이름: ${students.sort()[i]}`);
+for (let value of data) {
+  if (obj[value] === undefined) {
+    obj[value] = 1;
+  } else if (obj[value] !== undefined) {
+    obj[value] += 1;
+  }
 }
+
+for (let i in obj) {
+  result += i + String(obj[i]);
+}
+
+console.log(result);
+
+// 60
+// const students = [
+//   "강은지",
+//   "김유정",
+//   "박현서",
+//   "최성훈",
+//   "홍유진",
+//   "박지호",
+//   "권윤일",
+//   "김채리",
+//   "한지호",
+//   "김진이",
+//   "김민호",
+//   "강채연"
+// ];
+
+// for (let i in students.sort()) {
+//   console.log(`번호: ${parseInt(i, 10) + 1}, 이름: ${students.sort()[i]}`);
+// }
 
 // padStart, padEnd
 // const data = "hello";

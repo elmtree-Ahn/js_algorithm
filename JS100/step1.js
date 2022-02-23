@@ -1,21 +1,39 @@
+// 62
+// abcdefgh
+// 20190923
+let a = String("aa".length);
+let b = String("".length);
+let c = String("c".length);
+let d = String("ddddddddd".length);
+let e = String("".length);
+let f = String("fffffffff".length);
+let g = String("gg".length);
+let h = String("hhh".length);
+
+console.log(a + b + c + d + e + f + g + h);
+// 2번
+// let arr = [200, 100, 300];
+// arr.splice(2, 0, 1000);
+// console.log(arr);
+
 // 61
-const data = "aaababbbcdddd";
-let obj = {};
-let result = "";
+// const data = "aaababbbcdddd";
+// let obj = {};
+// let result = "";
 
-for (let value of data) {
-  if (obj[value] === undefined) {
-    obj[value] = 1;
-  } else if (obj[value] !== undefined) {
-    obj[value] += 1;
-  }
-}
+// for (let value of data) {
+//   if (obj[value] === undefined) {
+//     obj[value] = 1;
+//   } else if (obj[value] !== undefined) {
+//     obj[value] += 1;
+//   }
+// }
 
-for (let i in obj) {
-  result += i + String(obj[i]);
-}
+// for (let i in obj) {
+//   result += i + String(obj[i]);
+// }
 
-console.log(result);
+// console.log(result);
 
 // 60
 // const students = [

@@ -1,16 +1,27 @@
+// 63
+const data = "복잡한 세상 편하게 살자".split(" ");
+let result = "";
+
+for (const i in data) {
+  result += data[i][0];
+}
+
+console.log(result);
+
 // 62
 // abcdefgh
 // 20190923
-let a = String("aa".length);
-let b = String("".length);
-let c = String("c".length);
-let d = String("ddddddddd".length);
-let e = String("".length);
-let f = String("fffffffff".length);
-let g = String("gg".length);
-let h = String("hhh".length);
+// let a = String("aa".length);
+// let b = String("".length);
+// let c = String("c".length);
+// let d = String("ddddddddd".length);
+// let e = String("".length);
+// let f = String("fffffffff".length);
+// let g = String("gg".length);
+// let h = String("hhh".length);
 
-console.log(a + b + c + d + e + f + g + h);
+// console.log(a + b + c + d + e + f + g + h);
+
 // 2번
 // let arr = [200, 100, 300];
 // arr.splice(2, 0, 1000);

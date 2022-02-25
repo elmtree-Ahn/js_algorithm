@@ -1,12 +1,70 @@
-// 63
-const data = "복잡한 세상 편하게 살자".split(" ");
-let result = "";
+// 64
+let N = 23;
+let result = 0;
+// 3 20
+// 3 17
+// 3 14
+// 7 7
+// 7 0
+while (true) {
+  if (N % 7 === 0) {
+    result += parseInt(N / 7, 10);
+    console.log(result);
+    break;
+  }
 
-for (const i in data) {
-  result += data[i][0];
+  N -= 3;
+  result += 1;
+
+  if (N < 0) {
+    console.log(-1);
+    break;
+  }
 }
 
-console.log(result);
+// 9 복습
+// var year = "2019";
+// var month = "04";
+// var day = "26";
+// var hour = "11";
+// var minute = "34";
+// var second = "27";
+
+// var result = year.concat(
+//   "/",
+//   month,
+//   "/",
+//   day,
+//   " ",
+//   hour,
+//   ":",
+//   minute,
+//   ":",
+//   second
+// );
+
+// console.log(result);
+
+// 8 복습
+// var d = {
+//   height: 180,
+//   weight: 78,
+//   weight: 84,
+//   temperature: 36,
+//   eyesight: 1
+// };
+
+// console.log(d["weight"]);
+
+// 63
+// const data = "복잡한 세상 편하게 살자".split(" ");
+// let result = "";
+
+// for (const i in data) {
+//   result += data[i][0];
+// }
+
+// console.log(result);
 
 // 62
 // abcdefgh

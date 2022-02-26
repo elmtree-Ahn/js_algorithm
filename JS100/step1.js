@@ -1,26 +1,40 @@
-// 64
-let N = 23;
-let result = 0;
-// 3 20
-// 3 17
-// 3 14
-// 7 7
-// 7 0
-while (true) {
-  if (N % 7 === 0) {
-    result += parseInt(N / 7, 10);
-    console.log(result);
-    break;
-  }
+// 65
+const a = [1, 2, 3, 4];
+const b = ["a", "b", "c", "d"];
+let result = [];
 
-  N -= 3;
-  result += 1;
-
-  if (N < 0) {
-    console.log(-1);
-    break;
+for (let i = 0; i < a.length; i++) {
+  if (i % 2 === 0) {
+    result.push([a[i], b[i]]);
+  } else {
+    result.push([b[i], a[i]]);
   }
 }
+console.log(result);
+
+// 64
+// let N = 23;
+// let result = 0;
+// // 3 20
+// // 3 17
+// // 3 14
+// // 7 7
+// // 7 0
+// while (true) {
+//   if (N % 7 === 0) {
+//     result += parseInt(N / 7, 10);
+//     console.log(result);
+//     break;
+//   }
+
+//   N -= 3;
+//   result += 1;
+
+//   if (N < 0) {
+//     console.log(-1);
+//     break;
+//   }
+// }
 
 // 9 복습
 // var year = "2019";

@@ -1,16 +1,42 @@
-// 65
-const a = [1, 2, 3, 4];
-const b = ["a", "b", "c", "d"];
-let result = [];
+// 66
+const tower = ["ABCDEF", "BCAD", "ADEFQRX", "BEDFG", "EFGHZ"];
+const rule = "ABC";
 
-for (let i = 0; i < a.length; i++) {
-  if (i % 2 === 0) {
-    result.push([a[i], b[i]]);
-  } else {
-    result.push([b[i], a[i]]);
+function eachBlocks(tower, rule) {
+  let answer = [];
+  for (let blocks of tower) {
+    answer.push(analysis(blocks, rule));
   }
+  return answer;
 }
-console.log(result);
+
+function analysis(blocks, rule) {
+  let store = rule.indexOf(rule[0]);
+  for (let block of blocks) {
+    if (rule.includes(block)) {
+      if (rule.indexOf(block) < store) {
+        return "불가능";
+      }
+      store = rule.indexOf(block);
+    }
+  }
+  return "가능";
+}
+
+console.log(eachBlocks(tower, rule));
+// 65
+// const a = [1, 2, 3, 4];
+// const b = ["a", "b", "c", "d"];
+// let result = [];
+
+// for (let i = 0; i < a.length; i++) {
+//   if (i % 2 === 0) {
+//     result.push([a[i], b[i]]);
+//   } else {
+//     result.push([b[i], a[i]]);
+//   }
+// }
+// console.log(result);
 
 // 64
 // let N = 23;

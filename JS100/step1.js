@@ -1,29 +1,83 @@
+// 67
+const N = 59;
+
+let minsu = 0;
+let people = 0;
+for (let i = 1; i <= N; i++) {
+  let sum = 0;
+  for (let j = 1; j <= i; j++) {
+    sum += j;
+  }
+
+  if (N < sum) {
+    people = i + 1;
+    minsu = N - (sum - i);
+    break;
+  }
+}
+
+let result = [minsu, people];
+console.log(result);
+
+// 총 악수 횟수 59
+// 민규의 악수 4
+
+// 민규를 제외한 악수 54
+// 참가 인원 12
+
 // 66
-const tower = ["ABCDEF", "BCAD", "ADEFQRX", "BEDFG", "EFGHZ"];
-const rule = "ABC";
+// const towers = ["ABCDEF", "BCAD", "ADEFQRX", "BEDFG", "EFGHZ"];
+// const rule = "ABD";
 
-function eachBlocks(tower, rule) {
-  let answer = [];
-  for (let blocks of tower) {
-    answer.push(analysis(blocks, rule));
-  }
-  return answer;
-}
+// function solution(towers, rule) {
+//   let result = [];
+//   for (let tower of towers) {
+//     result.push(check(tower, rule));
+//   }
 
-function analysis(blocks, rule) {
-  let store = rule.indexOf(rule[0]);
-  for (let block of blocks) {
-    if (rule.includes(block)) {
-      if (rule.indexOf(block) < store) {
-        return "불가능";
-      }
-      store = rule.indexOf(block);
-    }
-  }
-  return "가능";
-}
+//   return result;
+// }
 
-console.log(eachBlocks(tower, rule));
+// function check(tower, rule) {
+//   let store = rule.indexOf(rule[0]);
+//   for (let block of tower) {
+//     if (rule.includes(block)) {
+//       if (store > rule.indexOf(block)) {
+//         return "불가능";
+//       }
+//       store = rule.indexOf(block);
+//     }
+//   }
+//   return "가능";
+// }
+
+// console.log(solution(towers, rule));
+
+// function solution(towers, rule) {
+//   let answer = [];
+//   for (let tower of towers) {
+//     answer.push(check(tower, rule));
+//   }
+//   return answer;
+// }
+
+// function check(tower, rule) {
+//   let store = rule.indexOf(rule[0]);
+//   for (let block of tower) {
+//     if (rule.includes(block)) {
+//       if (store > rule.indexOf(block)) {
+//         return "불가능";
+//       }
+//       store = rule.indexOf(block);
+//     }
+//   }
+//   return "가능";
+// }
+// const towers = ["ABCDEF", "BCAD", "ADEFQRX", "BEDFG", "EFGHZ"];
+// const rule = "ABD";
+
+// console.log(solution(towers, rule));
+
 // 65
 // const a = [1, 2, 3, 4];
 // const b = ["a", "b", "c", "d"];

@@ -1,23 +1,49 @@
-// 67
-const N = 59;
+// 복습 9
+// 68
+function solution(버스시간, 기준시간) {
+  let answer = [];
+  기준시간 = 기준시간.split(":").map((n) => parseInt(n, 10));
+  기준시간 = 기준시간[0] * 60 + 기준시간[1];
 
-let minsu = 0;
-let people = 0;
-for (let i = 1; i <= N; i++) {
-  let sum = 0;
-  for (let j = 1; j <= i; j++) {
-    sum += j;
-  }
+  for (let i in 버스시간) {
+    let time = 버스시간[i].split(":").map((n) => parseInt(n, 10));
+    time = time[0] * 60 + time[1];
 
-  if (N < sum) {
-    people = i + 1;
-    minsu = N - (sum - i);
-    break;
+    if (time < 기준시간) {
+      answer.push("지나갔습니다");
+    } else {
+      let 시간 = parseInt((time - 기준시간) / 60, 10);
+      let 분 = (time - 기준시간) % 60;
+      answer.push(
+        String(시간).padStart(2, 0) + "시간 " + String(분).padStart(2, 0) + "분"
+      );
+    }
   }
+  return answer;
 }
 
-let result = [minsu, people];
-console.log(result);
+console.log(solution(["12:30", "13:20", "14:13"], "12:40"));
+
+// 67
+// const N = 59;
+
+// let minsu = 0;
+// let people = 0;
+// for (let i = 1; i <= N; i++) {
+//   let sum = 0;
+//   for (let j = 1; j <= i; j++) {
+//     sum += j;
+//   }
+
+//   if (N < sum) {
+//     people = i + 1;
+//     minsu = N - (sum - i);
+//     break;
+//   }
+// }
+
+// let result = [minsu, people];
+// console.log(result);
 
 // 총 악수 횟수 59
 // 민규의 악수 4

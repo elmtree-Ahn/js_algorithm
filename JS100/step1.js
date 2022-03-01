@@ -1,28 +1,72 @@
 // 복습 9
-// 68
-function solution(버스시간, 기준시간) {
-  let answer = [];
-  기준시간 = 기준시간.split(":").map((n) => parseInt(n, 10));
-  기준시간 = 기준시간[0] * 60 + 기준시간[1];
 
-  for (let i in 버스시간) {
-    let time = 버스시간[i].split(":").map((n) => parseInt(n, 10));
-    time = time[0] * 60 + time[1];
+//69
+const N = 100;
+const primeList = [];
+const answerList = [];
+let primeBool = true;
 
-    if (time < 기준시간) {
-      answer.push("지나갔습니다");
-    } else {
-      let 시간 = parseInt((time - 기준시간) / 60, 10);
-      let 분 = (time - 기준시간) % 60;
-      answer.push(
-        String(시간).padStart(2, 0) + "시간 " + String(분).padStart(2, 0) + "분"
-      );
+for (let i = 2; i < N; i++) {
+  for (let j = 2; j < i; j++) {
+    if (i % j === 0) {
+      primeBool = false;
     }
   }
-  return answer;
+  if (primeBool) {
+    primeList.push(i);
+  }
+  primeBool = true;
 }
 
-console.log(solution(["12:30", "13:20", "14:13"], "12:40"));
+for (let k = 0; k < primeList.length; k++) {
+  if (
+    primeList.includes(N - primeList[k]) &&
+    primeList[k] <= N - primeList[k]
+  ) {
+    answerList.push([primeList[k], N - primeList[k]]);
+  }
+}
+
+// 차이
+let minusValue = answerList.map((el) => el[1] - el[0]);
+
+// 큰 차이의 index
+let maxValue = minusValue.indexOf(Math.max(...minusValue));
+// 작은 차이
+let minValue = minusValue.indexOf(Math.min(...minusValue));
+
+// 모든 경우
+console.log(answerList);
+
+// 가장 큰 차이
+console.log(answerList[maxValue]);
+// 가장 작은 차이
+console.log(answerList[minValue]);
+
+// 68
+// function solution(버스시간, 기준시간) {
+//   let answer = [];
+//   기준시간 = 기준시간.split(":").map((n) => parseInt(n, 10));
+//   기준시간 = 기준시간[0] * 60 + 기준시간[1];
+
+//   for (let i in 버스시간) {
+//     let time = 버스시간[i].split(":").map((n) => parseInt(n, 10));
+//     time = time[0] * 60 + time[1];
+
+//     if (time < 기준시간) {
+//       answer.push("지나갔습니다");
+//     } else {
+//       let 시간 = parseInt((time - 기준시간) / 60, 10);
+//       let 분 = (time - 기준시간) % 60;
+//       answer.push(
+//         String(시간).padStart(2, 0) + "시간 " + String(분).padStart(2, 0) + "분"
+//       );
+//     }
+//   }
+//   return answer;
+// }
+
+// console.log(solution(["12:30", "13:20", "14:13"], "12:40"));
 
 // 67
 // const N = 59;

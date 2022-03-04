@@ -1,47 +1,82 @@
 // 복습 9
 
-//69
-const N = 100;
-const primeList = [];
-const answerList = [];
-let primeBool = true;
+// 70
+const a = [
+  [1, 2],
+  [2, 4]
+];
 
-for (let i = 2; i < N; i++) {
-  for (let j = 2; j < i; j++) {
-    if (i % j === 0) {
-      primeBool = false;
+const b = [
+  [1, 0],
+  [0, 3]
+];
+
+function solution(a, b) {
+  let result = [];
+  const len = a[0].length;
+
+  if (len === b.length) {
+    for (let i = 0; i < len; i++) {
+      let row = [];
+      for (let j = 0; j < len; j++) {
+        let el = 0;
+        for (let k = 0; k < len; k++) {
+          el += a[i][k] * b[k][j];
+        }
+        row.push(el);
+      }
+      result.push(row);
     }
-  }
-  if (primeBool) {
-    primeList.push(i);
-  }
-  primeBool = true;
-}
-
-for (let k = 0; k < primeList.length; k++) {
-  if (
-    primeList.includes(N - primeList[k]) &&
-    primeList[k] <= N - primeList[k]
-  ) {
-    answerList.push([primeList[k], N - primeList[k]]);
+    return result;
+  } else {
+    return -1;
   }
 }
 
-// 차이
-let minusValue = answerList.map((el) => el[1] - el[0]);
+console.log(solution(a, b));
 
-// 큰 차이의 index
-let maxValue = minusValue.indexOf(Math.max(...minusValue));
-// 작은 차이
-let minValue = minusValue.indexOf(Math.min(...minusValue));
+//69
+// const N = 100;
+// const primeList = [];
+// const answerList = [];
+// let primeBool = true;
 
-// 모든 경우
-console.log(answerList);
+// for (let i = 2; i < N; i++) {
+//   for (let j = 2; j < i; j++) {
+//     if (i % j === 0) {
+//       primeBool = false;
+//     }
+//   }
+//   if (primeBool) {
+//     primeList.push(i);
+//   }
+//   primeBool = true;
+// }
 
-// 가장 큰 차이
-console.log(answerList[maxValue]);
-// 가장 작은 차이
-console.log(answerList[minValue]);
+// for (let k = 0; k < primeList.length; k++) {
+//   if (
+//     primeList.includes(N - primeList[k]) &&
+//     primeList[k] <= N - primeList[k]
+//   ) {
+//     answerList.push([primeList[k], N - primeList[k]]);
+//   }
+// }
+
+// // 차이
+// let minusValue = answerList.map((el) => el[1] - el[0]);
+
+// // 큰 차이의 index
+// let maxValue = minusValue.indexOf(Math.max(...minusValue));
+// // 작은 차이
+// let minValue = minusValue.indexOf(Math.min(...minusValue));
+
+// // 모든 경우
+// console.log(answerList);
+
+// // 가장 큰 차이
+// console.log(answerList[maxValue]);
+// // 가장 작은 차이
+// console.log(answerList[minValue]);
 
 // 68
 // function solution(버스시간, 기준시간) {

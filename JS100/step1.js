@@ -1,39 +1,82 @@
 // 복습 9
 
-// 70
-const a = [
-  [1, 2],
-  [2, 4]
-];
+// 71
+const graph = {
+  E: ["D", "A"],
+  F: ["D"],
+  A: ["E", "C", "B"],
+  B: ["A"],
+  C: ["A"],
+  D: ["E", "F"]
+};
 
-const b = [
-  [1, 0],
-  [0, 3]
-];
-
-function solution(a, b) {
-  let result = [];
-  const len = a[0].length;
-
-  if (len === b.length) {
-    for (let i = 0; i < len; i++) {
-      let row = [];
-      for (let j = 0; j < len; j++) {
-        let el = 0;
-        for (let k = 0; k < len; k++) {
-          el += a[i][k] * b[k][j];
-        }
-        row.push(el);
+const dfs = (graph, start) => {
+  let visited = [];
+  let stack = [start];
+  while (stack.length !== 0) {
+    let n = stack.pop();
+    if (!visited.includes(n)) {
+      visited.push(n);
+      let sub = graph[n].filter((x) => !visited.includes(x));
+      for (let i of sub) {
+        stack.push(i);
       }
-      result.push(row);
     }
-    return result;
-  } else {
-    return -1;
   }
-}
+  return visited;
+};
 
-console.log(solution(a, b));
+console.log(dfs(graph, "E"));
+
+// 10 복습
+// const data = 5;
+// let star = "*";
+// let blank = " ";
+
+// for (let i = 0; i < data; i++) {
+//   star += star;
+//   console.log(star);
+// }
+
+// 4 1 4
+// 3 3 3
+// 2 5 2
+// 1 7 1
+// 0 9 0
+
+// 70
+// const a = [
+//   [1, 2],
+//   [2, 4]
+// ];
+// const b = [
+//   [1, 0],
+//   [0, 3]
+// ];
+
+// function solution(a, b) {
+//   let result = [];
+//   const len = a[0].length;
+
+//   if (len === b.length) {
+//     for (let i = 0; i < len; i++) {
+//       let row = [];
+//       for (let j = 0; j < len; j++) {
+//         let el = 0;
+//         for (let k = 0; k < len; k++) {
+//           el = a[i][k] * b[k][j];
+//         }
+//         row.push(el);
+//       }
+//       result.push(row);
+//     }
+//     return result;
+//   } else {
+//     return -1;
+//   }
+// }
+
+// console.log(solution(a, b));
 
 //69
 // const N = 100;

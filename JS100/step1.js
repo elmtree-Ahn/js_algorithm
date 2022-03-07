@@ -1,6 +1,6 @@
 // 복습 9
 
-// 71
+// 72
 const graph = {
   E: ["D", "A"],
   F: ["D"],
@@ -10,23 +10,82 @@ const graph = {
   D: ["E", "F"]
 };
 
-const dfs = (graph, start) => {
+const bfs = (graph, start) => {
   let visited = [];
-  let stack = [start];
-  while (stack.length !== 0) {
-    let n = stack.pop();
-    if (!visited.includes(n)) {
-      visited.push(n);
-      let sub = graph[n].filter((x) => !visited.includes(x));
-      for (let i of sub) {
-        stack.push(i);
+  let queue = [start];
+
+  while (queue.length !== 0) {
+    let host = queue.shift();
+    if (!visited.includes(host)) {
+      visited.push(host);
+      let store = graph[host].filter((item) => !visited.includes(item));
+      for (let i of store) {
+        queue.push(i);
       }
     }
   }
   return visited;
 };
 
-console.log(dfs(graph, "E"));
+console.log(bfs(graph, "E"));
+
+// 71번 복습
+// const graph = {
+//   E: ["D", "A"],
+//   F: ["D"],
+//   A: ["E", "C", "B"],
+//   B: ["A"],
+//   C: ["A"],
+//   D: ["E", "F"]
+// };
+
+// const dfs = (graph, start) => {
+//   let visited = [];
+//   let stack = [start];
+//   while (stack.length !== 0) {
+//     let host = stack.pop();
+//     if (!visited.includes(host)) {
+//       visited.push(host);
+//       let store = graph[host].filter((item) => !visited.includes(item));
+//       for (let i of store) {
+//         stack.push(i);
+//       }
+//     }
+//   }
+//   return visited;
+// };
+
+// console.log(dfs(graph, "E"));
+
+// 71
+// const graph = {
+//   E: ["D", "A"],
+//   F: ["D"],
+//   A: ["E", "C", "B"],
+//   B: ["A"],
+//   C: ["A"],
+//   D: ["E", "F"]
+// };
+
+// function dfs(graph, start) {
+//   let visited = [];
+//   let stack = [start];
+
+//   while (stack.length !== 0) {
+//     let store = stack.pop();
+//     if (!visited.includes(store)) {
+//       visited.push(store);
+//       let sub = graph[store].filter((el) => !visited.includes(el));
+//       for (let i of sub) {
+//         stack.push(i);
+//       }
+//     }
+//   }
+
+//   return visited;
+// }
+
+// console.log(dfs(graph, "E"));
 
 // 10 복습
 // const data = 5;

@@ -1,33 +1,64 @@
-// 복습 9
+// 복습 10 하는 중
+// 학습 75 해야 함
+
+// 75
+function sol(n) {
+  let answer = 0;
+  let count = 1;
+  const d = { 3: 1, 6: 2, 9: 3 };
+
+  while (n.length !== 0) {
+    answer += d[parseInt(n.pop(), 10)] * count;
+    count *= 3;
+  }
+  return answer;
+}
+
+const user_input = new String(prompt("입력해주세요")).split("");
+
+console.log(sol(user_input));
+// 10
+// const level = 5;
+
+// for (let i = 1; i <= level; i++) {
+//   let tree = "";
+//   for (let k = 1; k <= level - i; k++) {
+//     tree += " ";
+//   }
+//   for (let j = 1; j <= i * 2 - 1; j++) {
+//     tree += "*";
+//   }
+//   console.log(tree);
+// }
 
 // 72
-const graph = {
-  E: ["D", "A"],
-  F: ["D"],
-  A: ["E", "C", "B"],
-  B: ["A"],
-  C: ["A"],
-  D: ["E", "F"]
-};
+// const graph = {
+//   E: ["D", "A"],
+//   F: ["D"],
+//   A: ["E", "C", "B"],
+//   B: ["A"],
+//   C: ["A"],
+//   D: ["E", "F"]
+// };
 
-const bfs = (graph, start) => {
-  let visited = [];
-  let queue = [start];
+// const bfs = (graph, start) => {
+//   let visited = [];
+//   let queue = [start];
 
-  while (queue.length !== 0) {
-    let host = queue.shift();
-    if (!visited.includes(host)) {
-      visited.push(host);
-      let store = graph[host].filter((item) => !visited.includes(item));
-      for (let i of store) {
-        queue.push(i);
-      }
-    }
-  }
-  return visited;
-};
+//   while (queue.length !== 0) {
+//     let host = queue.shift();
+//     if (!visited.includes(host)) {
+//       visited.push(host);
+//       let store = graph[host].filter((item) => !visited.includes(item));
+//       for (let i of store) {
+//         queue.push(i);
+//       }
+//     }
+//   }
+//   return visited;
+// };
 
-console.log(bfs(graph, "E"));
+// console.log(bfs(graph, "E"));
 
 // 71번 복습
 // const graph = {

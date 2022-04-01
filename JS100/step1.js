@@ -1,22 +1,70 @@
 // 복습 10 하는 중
-// 학습 75 해야 함
+// 학습 77 해야 함
 
-// 75
-function sol(n) {
-  let answer = 0;
-  let count = 1;
-  const d = { 3: 1, 6: 2, 9: 3 };
+// 76
+let 사각형 = 5;
+let 탐색가능지역 = 3;
+let 지뢰밭 = [
+  [1, 0, 0, 1, 0],
+  [0, 1, 0, 0, 1],
+  [0, 0, 0, 1, 0],
+  [0, 0, 0, 0, 0],
+  [0, 0, 1, 0, 0]
+];
 
-  while (n.length !== 0) {
-    answer += d[parseInt(n.pop(), 10)] * count;
-    count *= 3;
+let iadd = 0;
+let jadd = 0;
+let value = 0;
+let valueArray = [];
+for (let iadd = 0; iadd <= 사각형 - 탐색가능지역; iadd++) {
+  for (let jadd = 0; jadd <= 사각형 - 탐색가능지역; jadd++) {
+    for (let i = iadd; i <= 탐색가능지역 - 1 + iadd; i++) {
+      for (let j = jadd; j <= 탐색가능지역 - 1 + jadd; j++) {
+        // console.log(i, j);
+        value += 지뢰밭[i][j];
+      }
+    }
+    valueArray.push(value);
+    console.log("---------");
+    value = 0;
   }
-  return answer;
+  console.log("!!!!!!!");
 }
 
-const user_input = new String(prompt("입력해주세요")).split("");
+console.log(valueArray);
+console.log(Math.max.apply(null, valueArray));
 
-console.log(sol(user_input));
+// 로직 구현
+// let obj = { a: 4, b: 0.5, c: 0.35, d: 5, f: 5 };
+
+// const findMainGrape = (obj) => {
+//   let answer = "";
+
+//   let arr = Object.values(obj);
+//   let max = Math.max(...arr);
+
+//   answer = Object.keys(obj).find((key) => obj[key] === max);
+//   return answer;
+// };
+
+// console.log(findMainGrape(obj));
+
+// 75
+// function sol(n) {
+//   let answer = 0;
+//   let count = 1;
+//   const d = { 3: 1, 6: 2, 9: 3 };
+
+//   while (n.length !== 0) {
+//     answer += d[parseInt(n.pop(), 10)] * count;
+//     count *= 3;
+//   }
+//   return answer;
+// }
+
+// const user_input = new String(prompt("입력해주세요")).split("");
+
+// console.log(sol(user_input));
 // 10
 // const level = 5;
 

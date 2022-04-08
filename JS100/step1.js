@@ -1,5 +1,33 @@
 // 복습 10 하는 중
 // 학습 77 해야 함
+function leftPad(value) {
+  if (value >= 10) {
+    return value;
+  }
+  return `0${value}`;
+}
+function toStringByFormatting(source, delimiter = "-") {
+  const year = source.getFullYear();
+  const month = leftPad(source.getMonth() + 1);
+  const day = leftPad(source.getDate());
+  return [year, month, day].join(delimiter);
+}
+
+// console.log(toStringByFormatting(new Date()));
+
+// 3일전부터 오늘 만들기
+
+function daysAgo(gap) {
+  // let end = toStringByFormatting(new Date());
+  let start = new Date();
+  start.setDate(start.getDate() - gap);
+  return toStringByFormatting(start);
+}
+
+console.log(daysAgo(2));
+// console.log(new Date());
+
+// console.log(daysAgo());
 
 // 76
 // let 사각형 = 5;

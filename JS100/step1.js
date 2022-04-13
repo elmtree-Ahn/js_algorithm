@@ -1,30 +1,108 @@
 // 복습 10 하는 중
 // 학습 77 해야 함
-function leftPad(value) {
-  if (value >= 10) {
-    return value;
+// YYYY-WW => YYYY-MM-DD
+
+const findFistAndLastDayFromWeek = (week, kind) => {
+  let fistDay = "";
+  let lastDay = "";
+
+  let yy = week.split("-W")[0];
+  let ww = week.split("-W")[1];
+
+  let month_days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+  let month_days_count = [];
+
+  // 윤년(2월이 29일)인지 검사
+  function is_leap_year(year) {
+    return (
+      (year % 4 === 0 && year % 100 !== 0) ||
+      (year % 400 === 0 && year % 4000 !== 0)
+    );
   }
-  return `0${value}`;
-}
-function toStringByFormatting(source, delimiter = "-") {
-  const year = source.getFullYear();
-  const month = leftPad(source.getMonth() + 1);
-  const day = leftPad(source.getDate());
-  return [year, month, day].join(delimiter);
-}
 
-// console.log(toStringByFormatting(new Date()));
+  // 년도에 맞게 month_days 와 month_days_count의 값을 설정한다.
+  function set_month_days(year) {
+    if (is_leap_year(year)) month_days[1] = 29;
+    else month_days[1] = 28;
 
-// 3일전부터 오늘 만들기
+    month_days_count[0] = 0;
 
-function daysAgo(gap) {
-  // let end = toStringByFormatting(new Date());
-  let start = new Date();
-  start.setDate(start.getDate() - gap);
-  return toStringByFormatting(start);
-}
+    for (let i = 0; i < 12; i++) {
+      month_days_count[i + 1] = month_days_count[i] + month_days[i];
+    }
+  }
 
-console.log(daysAgo(2));
+  function test(year, week) {
+    set_month_days(year);
+
+    let weekday = new Date(year, 0, 1).getDay();
+    let total_days = (week - 1) * 7 - weekday;
+
+    let yy1, yy2, mm1, mm2, dd1, dd2;
+
+    if (total_days < 0) {
+      yy1 = year - 1;
+      yy2 = year;
+      mm1 = 12;
+      mm2 = 1;
+      dd1 = 32 - weekday;
+      dd2 = 7 - weekday;
+    } else {
+      yy1 = yy2 = year;
+      for (mm1 = 0; mm1 < 12; mm1++) {
+        if (month_days_count[mm1] > total_days) break;
+      }
+
+      dd1 = total_days - month_days_count[mm1 - 1] + 1;
+      dd2 = dd1 + 6;
+      mm2 = mm1;
+
+      if (dd2 > month_days[mm1 - 1]) {
+        mm2 = (mm1 % 12) + 1;
+        dd2 = dd2 - month_days[mm1 - 1];
+      }
+
+      if (mm1 === 12 && mm2 === 1) yy2++;
+    }
+
+    fistDay = `${yy1}-${mm1}-${dd1}`;
+    lastDay = `${yy2}-${mm2}-${dd2}`;
+  }
+
+  test(yy, ww);
+  if (kind === "first") {
+    return fistDay;
+  } else if (kind === "end") {
+    return lastDay;
+  }
+};
+
+console.log(findFistAndLastDayFromWeek("2022-W12", "first"));
+
+// function leftPad(value) {
+//   if (value >= 10) {
+//     return value;
+//   }
+//   return `0${value}`;
+// }
+// function toStringByFormatting(source, delimiter = "-") {
+//   const year = source.getFullYear();
+//   const month = leftPad(source.getMonth() + 1);
+//   const day = leftPad(source.getDate());
+//   return [year, month, day].join(delimiter);
+// }
+
+// // console.log(toStringByFormatting(new Date()));
+
+// // 3일전부터 오늘 만들기
+// function daysAgo(gap) {
+//   let end = toStringByFormatting(new Date());
+//   let start = new Date();
+//   start.setDate(start.getDate() - gap);
+//   return [toStringByFormatting(start), end];
+// }
+
+// console.log(daysAgo(2));
 // console.log(new Date());
 
 // console.log(daysAgo());

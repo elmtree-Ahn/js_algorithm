@@ -1,7 +1,22 @@
 // 복습 10 하는 중
 // 학습 77 해야 함
-// YYYY-WW => YYYY-MM-DD
 
+// YYYY-MM => YYYY-MM-DD
+const makeFirstAndLastDayFromMonth = (date, kind) => {
+  let month = date.split("-")[1];
+  let data = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+  if (kind === "first") {
+    return date + "-01";
+  } else if (kind === "last") {
+    return date + `-${data[month - 1]}`;
+  }
+};
+
+console.log(makeFirstAndLastDayFromMonth("2022-06", "first"));
+console.log(makeFirstAndLastDayFromMonth("2022-06", "last"));
+
+// YYYY-WW => YYYY-MM-DD
 const findFistAndLastDayFromWeek = (week, kind) => {
   let fistDay = "";
   let lastDay = "";
